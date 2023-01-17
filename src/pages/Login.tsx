@@ -7,7 +7,7 @@ import Swal from "../utils/Swal";
 import LayoutHome from "../components/LayoutHome";
 import Button from "../components/Button";
 
-function Register() {
+function Login() {
   const MySwal = withReactContent(Swal);
   //const navigate = useNavigate();
   const [disabled, setDisabled] = useState<boolean>(true);
@@ -45,41 +45,13 @@ function Register() {
               <div className="card-body">
                 <form onSubmit={handleSubmit}>
                   <div className="pb-10">
-                    <h1 className="text-white text-2xl font-bold">Register</h1>
+                    <h1 className="text-white text-2xl font-bold">Login</h1>
                   </div>
                   <div className="flex flex-col">
                     <div className="form-control flex flex-row gap-12 pb-4">
                       <label className="label">
                         <span className="label-text text-white font-semibold">
-                          Name
-                        </span>
-                      </label>
-                      <input
-                        type="text"
-                        className="input input-bordered bg-[#cbd5e1]"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div className="form-control flex flex-row pb-4">
-                      <label className="label">
-                        <span className="label-text text-white font-semibold">
-                          Phone Number
-                        </span>
-                      </label>
-                      <input
-                        type="number"
-                        className="input input-bordered bg-[#cbd5e1]"
-                        value={numberPhone}
-                        onChange={(e) => setNumberPhone(e.target.valueAsNumber)}
-                        placeholder="Your number phone"
-                      />
-                    </div>
-                    <div className="form-control flex flex-row gap-12 pb-4">
-                      <label className="label">
-                        <span className="label-text text-white font-semibold">
-                          Email
+                          Gmail
                         </span>
                       </label>
                       <input
@@ -90,6 +62,7 @@ function Register() {
                         placeholder="Your email"
                       />
                     </div>
+
                     <div className="form-control flex flex-row gap-7 pb-4">
                       <label className="label">
                         <span className="label-text text-white font-semibold">
@@ -108,7 +81,7 @@ function Register() {
 
                   <div className="form-control place-items-center ">
                     <button className="btn bg-[#64748b] w-32 px-12 rounded-full text-black">
-                      register
+                      login
                     </button>
                   </div>
                   <label className="label">
@@ -116,10 +89,10 @@ function Register() {
                       href="#"
                       className="label-text-alt link link-hover text-white"
                     >
-                      Already have an Account ?
+                      Don't have a account yet ?
                     </a>
                     <button className="btn bg-[#64748b] w-32 px-12 rounded-full text-black">
-                      login
+                      register
                     </button>
                   </label>
                 </form>
@@ -132,4 +105,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
