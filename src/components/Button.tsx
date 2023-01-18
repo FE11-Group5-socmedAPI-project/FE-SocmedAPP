@@ -5,7 +5,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
 }
 
-function CustomButton({ id, label, loading, ...props }: ButtonProps) {
+function Button({ id, label, loading, ...props }: ButtonProps) {
   return (
     <button
       id={id}
@@ -20,4 +20,4 @@ function CustomButton({ id, label, loading, ...props }: ButtonProps) {
   );
 }
 
-export default CustomButton;
+export default Button;

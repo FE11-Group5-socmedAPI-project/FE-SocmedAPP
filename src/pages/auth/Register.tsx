@@ -1,15 +1,15 @@
 import withReactContent from "sweetalert2-react-content";
 import React, { useState, useEffect } from "react";
-// { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import Swal from "../utils/Swal";
-import LayoutHome from "../components/LayoutHome";
-import Button from "../components/Button";
+import Swal from "../../utils/Swal";
+import LayoutHome from "../../components/LayoutHome";
+import Button from "../../components/Button";
 
 function Register() {
   const MySwal = withReactContent(Swal);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
@@ -34,6 +34,30 @@ function Register() {
       email,
       password,
     };
+
+    axios
+      .post("register", body)
+      .then((res) => {
+        const { message, data } = res.data;
+        MySwal.fire({
+          position: "center",
+          title: "Success",
+          text: message,
+          showCancelButton: false,
+          timer: 1500,
+        });
+        if (data) {
+        }
+      })
+      .catch((err) => {
+        const { message } = err.response.data;
+        MySwal.fire({
+          title: "Failed",
+          text: message,
+          showCancelButton: false,
+        });
+      })
+      .finally(() => setLoading(false));
   };
 
   return (

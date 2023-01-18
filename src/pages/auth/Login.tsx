@@ -1,15 +1,20 @@
 import withReactContent from "sweetalert2-react-content";
+import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-// { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useCookies } from "react-cookie";
 import axios from "axios";
 
-import Swal from "../utils/Swal";
-import LayoutHome from "../components/LayoutHome";
-import Button from "../components/Button";
+import Swal from "../../utils/Swal";
+import { handleAuth } from "../../utils/redux/reducers/reducer";
+import LayoutHome from "../../components/LayoutHome";
+import Button from "../../components/Button";
 
 function Login() {
   const MySwal = withReactContent(Swal);
-  //const navigate = useNavigate();
+  const [, setCookie] = useCookies(["token"]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
@@ -34,6 +39,28 @@ function Login() {
       email,
       password,
     };
+
+    axios
+      .post("login", body)
+      .then((res) => {
+        const { data, message } = res.data;
+        setCookie("token", data.token, { path: "/" });
+        dispatch(handleAuth(true));
+        MySwal.fire({
+          title: "Success",
+          text: message,
+          showCancelButton: false,
+        });
+      })
+      .catch((err) => {
+        const { data } = err.response;
+        MySwal.fire({
+          title: "Failed",
+          text: data.message,
+          showCancelButton: false,
+        });
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -70,11 +97,11 @@ function Login() {
                         </span>
                       </label>
                       <input
-                        type="password"
+                        type="Password"
                         className="input input-bordered bg-[#cbd5e1]"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="password"
+                        placeholder="Password"
                       />
                     </div>
                   </div>
