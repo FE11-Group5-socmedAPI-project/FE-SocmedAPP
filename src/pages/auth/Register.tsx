@@ -36,28 +36,24 @@ function Register() {
     };
 
     axios
-      .post("register", body)
+      .post("http://13.229.98.76/register", body)
       .then((res) => {
         const { message, data } = res.data;
+
         MySwal.fire({
-          position: "center",
           title: "Success",
           text: message,
           showCancelButton: false,
-          timer: 1500,
         });
-        if (data) {
-        }
+        navigate("/login");
       })
-      .catch((err) => {
-        const { message } = err.response.data;
-        MySwal.fire({
-          title: "Failed",
-          text: message,
-          showCancelButton: false,
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error,
         });
-      })
-      .finally(() => setLoading(false));
+      });
   };
 
   return (

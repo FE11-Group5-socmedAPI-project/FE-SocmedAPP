@@ -1,11 +1,9 @@
 import React from "react";
 
-import Layout from "../components/LayoutHome";
 import Leftbar from "../components/LeftBarHome";
 import Center from "../components/Center";
 import Rightbar from "../components/RightBarHome";
 import LayoutHome from "../components/LayoutHome";
-import ButtonLoadMore from "../components/ButtonLoadMore";
 
 interface PropsType {}
 interface StateType {}

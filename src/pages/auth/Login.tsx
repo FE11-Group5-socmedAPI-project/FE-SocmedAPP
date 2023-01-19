@@ -12,55 +12,60 @@ import Button from "../../components/Button";
 
 function Login() {
   const MySwal = withReactContent(Swal);
-  const [, setCookie] = useCookies(["token"]);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const [, setCookie] = useCookies([
+    "token",
+    "name",
+    "user_id",
+    "profile_foto",
+  ]);
   const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
-  const [name, setName] = useState<string>("");
-  const [numberPhone, setNumberPhone] = useState<number>(1);
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   useEffect(() => {
-    if (name && numberPhone && email && password) {
+    if (email && password) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  }, [name, numberPhone, email, password]);
+  }, [email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
     e.preventDefault();
     const body = {
-      name: name,
-      numberPhone: numberPhone,
-      email,
-      password,
+      email: email,
+      password: password,
     };
 
     axios
-      .post("login", body)
+      .post("http://13.229.98.76/logi", body)
       .then((res) => {
-        const { data, message } = res.data;
-        setCookie("token", data.token, { path: "/" });
-        dispatch(handleAuth(true));
-        MySwal.fire({
-          title: "Success",
-          text: message,
-          showCancelButton: false,
-        });
+        const { message, data } = res.data;
+        if (data) {
+          console.log(data);
+          MySwal.fire({
+            title: "Success",
+            text: message,
+            showCancelButton: false,
+          });
+          setCookie("token", data.token, { path: "/" });
+          setCookie("name", data.name);
+          setCookie("profile_foto", data.profile_foto);
+          setCookie("user_id", data.id);
+          navigate("/home");
+        }
       })
-      .catch((err) => {
-        const { data } = err.response;
-        MySwal.fire({
-          title: "Failed",
-          text: data.message,
-          showCancelButton: false,
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error,
         });
-      })
-      .finally(() => setLoading(false));
+      });
   };
 
   return (
