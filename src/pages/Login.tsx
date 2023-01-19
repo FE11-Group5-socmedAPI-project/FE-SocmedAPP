@@ -1,7 +1,7 @@
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 import axios from "axios";
 import { useCookies } from "react-cookie";
@@ -40,6 +40,7 @@ function Login() {
       email: email,
       password: password,
     };
+    axios
       .post("http://13.229.98.76/login", body)
       .then((res) => {
         const { message, data } = res.data;
@@ -65,9 +66,8 @@ function Login() {
         });
       });
   };
-  // contoh yang buat pusing
+
   return (
-    // <LayoutHome>
     <div className=" w-full h-full ">
       <div>
         <div className="hero min-h-screen bg-base-200">
