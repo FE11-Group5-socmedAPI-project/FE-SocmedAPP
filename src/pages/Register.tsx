@@ -1,6 +1,7 @@
 import withReactContent from "sweetalert2-react-content";
 import React, { useState, useEffect } from "react";
-// { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import Swal from "../utils/Swal";
@@ -9,31 +10,50 @@ import Button from "../components/Button";
 
 function Register() {
   const MySwal = withReactContent(Swal);
-  //const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
-  const [numberPhone, setNumberPhone] = useState<number>(1);
+  const [number_phone, setNumberPhone] = useState<number>(1);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
+  const navigate = useNavigate();
   useEffect(() => {
-    if (name && numberPhone && email && password) {
+    if (name && number_phone && email && password) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  }, [name, numberPhone, email, password]);
+  }, [name, number_phone, email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    setLoading(true);
     e.preventDefault();
     const body = {
       name: name,
-      numberPhone: numberPhone,
-      email,
-      password,
+      number_phone: number_phone,
+      email: email,
+      password: password,
     };
+    await axios
+      .post("http://13.229.98.76/register", body)
+      .then((res) => {
+        const { message, data } = res.data;
+
+        console.log(data);
+        MySwal.fire({
+          title: "Success",
+          text: message,
+          showCancelButton: false,
+        });
+        navigate("/login");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error,
+        });
+      });
   };
 
   return (
@@ -71,7 +91,7 @@ function Register() {
                       <input
                         type="number"
                         className="input input-bordered bg-[#cbd5e1]"
-                        value={numberPhone}
+                        value={number_phone}
                         onChange={(e) => setNumberPhone(e.target.valueAsNumber)}
                         placeholder="Your number phone"
                       />
