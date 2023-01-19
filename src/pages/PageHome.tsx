@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 import Leftbar from "../components/LeftBarHome";
 import Center from "../components/Center";
@@ -11,19 +12,21 @@ interface StateType {}
 const PageHome = () => {
   return (
     <>
-      <LayoutHome>
-        <div className="grid grid-cols-3 gap-4">
-          <div className="">
-            <Leftbar />
+      <Link to="/register">
+        <LayoutHome>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="">
+              <Leftbar />
+            </div>
+            <div className="">
+              <Center />
+            </div>
+            <div className="">
+              <Rightbar />
+            </div>
           </div>
-          <div className="">
-            <Center />
-          </div>
-          <div className="">
-            <Rightbar />
-          </div>
-        </div>
-      </LayoutHome>
+        </LayoutHome>
+      </Link>
     </>
   );
 };
