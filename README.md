@@ -154,7 +154,7 @@ npm run dev
 
   [![GitHub](https://img.shields.io/badge/-Andri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/deviandrialdi) [![LinkedIn](https://img.shields.io/badge/-Andri-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devi-andri-aldi-53b630144/)
 
-- Dwi Fakhri Chusaini:
+- Inri Veronika:
 
   [![GitHub](https://img.shields.io/badge/-Inri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/ALTA-Fe11-Inri) [![LinkedIn](https://img.shields.io/badge/-Fakhri-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dwi-fakhri-chusaini-5a114518a/)
 
