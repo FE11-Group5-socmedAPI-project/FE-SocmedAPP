@@ -46,7 +46,6 @@ const Center: FC<CenterProps> = ({ content, photo, user_name, id }) => {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
