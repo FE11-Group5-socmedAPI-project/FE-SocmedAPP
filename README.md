@@ -152,11 +152,11 @@ npm run dev
 
 - Devi Andri Aldi :
 
-  [![GitHub](https://img.shields.io/badge/-Andri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/deviandrialdi) [![LinkedIn](https://img.shields.io/badge/-Andri-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devi-andri-aldi-53b630144/)
+  [![GitHub](https://img.shields.io/badge/-Andri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/deviandrialdi)
 
 - Inri Veronika:
 
-  [![GitHub](https://img.shields.io/badge/-Inri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/ALTA-Fe11-Inri) [![LinkedIn](https://img.shields.io/badge/-Fakhri-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dwi-fakhri-chusaini-5a114518a/)
+  [![GitHub](https://img.shields.io/badge/-Inri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/ALTA-Fe11-Inri)
 
 [contributors-shield]: https://img.shields.io/github/contributors/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
 [contributors-url]: https://github.com/FE11-Group5-socmedAPI-project/FE-SocmedAPP
