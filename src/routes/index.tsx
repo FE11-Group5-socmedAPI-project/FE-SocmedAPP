@@ -8,13 +8,12 @@ import Home from "../pages/Home";
 import Profil from "../pages/Profil";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import PageHome from "../pages/PageHome";
 import { ThemeContext } from "../utils/context";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PageHome />,
+    element: <Register />,
   },
   {
     path: "/login",
@@ -31,10 +30,6 @@ const router = createBrowserRouter([
   {
     path: "/profil",
     element: <Profil />,
-  },
-   {
-    path: "/register",
-    element: <Register />,
   },
 ]);
 
