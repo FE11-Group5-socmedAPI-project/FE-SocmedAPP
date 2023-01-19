@@ -1,4 +1,5 @@
 import withReactContent from "sweetalert2-react-content";
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -139,7 +140,7 @@ function Register() {
                       Already have an Account ?
                     </a>
                     <button className="btn bg-[#64748b] w-32 px-12 rounded-full text-black">
-                      login
+                      <Link to="/login">Login</Link>
                     </button>
                   </label>
                 </form>

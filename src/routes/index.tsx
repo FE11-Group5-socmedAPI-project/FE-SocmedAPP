@@ -6,16 +6,25 @@ import { useState, useMemo, useEffect } from "react";
 import Detail from "../pages/Detail";
 import Home from "../pages/Home";
 import Profil from "../pages/Profil";
-// import { ThemeContext } from "../utils/context";
-// import { setFavorites } from "../utils/redux/reducer/reducer";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import { ThemeContext } from "../utils/context";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/home",
     element: <Home />,
   },
   {
-    path: "/post/:id_post",
+    path: "/posts/:id_post",
     element: <Detail />,
   },
   {
@@ -40,15 +49,15 @@ const App = () => {
   useEffect(() => {
     const getFavMovies = localStorage.getItem("FavMovie");
     if (getFavMovies) {
-      // dispatch(setFavorites(JSON.parse(getFavMovies)));
+      //dispatch(setFavorites(JSON.parse(getFavMovies)));
     }
   }, []);
 
-  // return (
-  //   < value={background}>
-  //     <RouterProvider router={router} />
-  //   </>
-  // );
+  return (
+    <ThemeContext.Provider value={background}>
+      <RouterProvider router={router} />
+    </ThemeContext.Provider>
+  );
 };
 
 export default App;
