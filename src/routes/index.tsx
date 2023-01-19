@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import PageHome from "../pages/PageHome";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Detail from "../pages/Detail";
+import Home from "../pages/Home";
+import Profil from "../pages/Profil";
 
 const router = createBrowserRouter([
   {
