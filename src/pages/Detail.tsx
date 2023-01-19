@@ -2,13 +2,48 @@ import Cardcoment from "../components/Cardcoment";
 import Leftbar from "../components/Leftbar";
 import Rightbar from "../components/Rightbar";
 import Layout from "../components/Layout";
+import { useParams } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { GoCommentDiscussion } from "react-icons/go";
 import { BiShareAlt } from "react-icons/bi";
+import { PostType } from "utils/types/post";
 
-interface PropsType {}
-interface StateType {}
+interface PropsType {
+  params?: any;
+}
+
+interface StateType {
+  data: PostType;
+}
 
 const Detail = () => {
+  const { id } = useParams();
+  const [cookie, setCookie] = useCookies();
+  const [data, setData] = useState<PostType>({});
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function fetchData() {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${cookie.token}`,
+      },
+    };
+    axios
+      .get(`http://13.229.98.76/posts/${id}`, config)
+      .then((ress) => {
+        const result = ress.data;
+        setData(result);
+        console.log("data post berdasarkan id", result);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }
   return (
     <>
       <Layout>
@@ -24,22 +59,18 @@ const Detail = () => {
                   alt=""
                   className="w-12 h-12 rounded-[50%]"
                 />
-                <span className="flex-row font-semibold text-xl">Budi</span>
+                <span className="flex-row font-semibold text-xl">
+                  {data.user_name}
+                </span>
               </div>
               <div className="px-20">
                 <div className="box-border h-auto w-94 border-1 bg-white rounded-lg">
-                  <p>
-                    "Segala sesuatu memiliki kesudahan, yang sudah berakhir
-                    biarlah berlalu dan yakinlah semua akan baik-baik saja."
-                  </p>
+                  <p>{data.content}</p>
                 </div>
               </div>
               <div className="px-20 pt-3 ">
                 <div className="box-border h-auto w-94 border-1 bg-[#cbd5e1] rounded-lg">
-                  <img
-                    src="https://i2.wp.com/blog.tripcetera.com/id/wp-content/uploads/2020/10/pulau-padar.jpg"
-                    alt=""
-                  />
+                  <img src={data.photo} alt="" />
                 </div>
                 <div className="flex flex-row gap-36 pb-5">
                   <div className="flex">
