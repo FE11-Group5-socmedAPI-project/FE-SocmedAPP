@@ -1,9 +1,10 @@
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 import Swal from "../utils/Swal";
 import { handleAuth } from "../utils/redux/reducers/reducer";
@@ -34,14 +35,11 @@ function Login() {
   }, [email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    setLoading(true);
     e.preventDefault();
     const body = {
       email: email,
       password: password,
     };
-
-    axios
       .post("http://13.229.98.76/login", body)
       .then((res) => {
         const { message, data } = res.data;
@@ -56,6 +54,7 @@ function Login() {
           setCookie("name", data.name);
           setCookie("profile_foto", data.profile_foto);
           setCookie("user_id", data.id);
+          navigate("/home");
         }
       })
       .catch((error) => {
@@ -66,7 +65,7 @@ function Login() {
         });
       });
   };
-
+  // contoh yang buat pusing
   return (
     // <LayoutHome>
     <div className=" w-full h-full ">

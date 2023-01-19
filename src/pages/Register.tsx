@@ -14,38 +14,40 @@ function Register() {
   const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
-  const [numberPhone, setNumberPhone] = useState<number>(1);
+  const [number_phone, setNumberPhone] = useState<number>(1);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
+  const navigate = useNavigate();
+  
+  
   useEffect(() => {
-    if (name && numberPhone && email && password) {
+    if (name && number_phone && email && password) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  }, [name, numberPhone, email, password]);
+  }, [name, number_phone, email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    setLoading(true);
     e.preventDefault();
     const body = {
       name: name,
-      numberPhone: numberPhone,
-      email,
-      password,
+      number_phone: number_phone,
+      email: email,
+      password: password,
     };
 
-    axios
       .post("http://13.229.98.76/register", body)
       .then((res) => {
         const { message, data } = res.data;
+        console.log(data);
 
         MySwal.fire({
           title: "Success",
           text: message,
           showCancelButton: false,
         });
+        navigate("/register");
       })
       .catch((error) => {
         Swal.fire({
@@ -57,7 +59,6 @@ function Register() {
   };
 
   return (
-    // <LayoutHome>
     <div className=" w-full h-full ">
       <div>
         <div className="hero min-h-screen bg-base-200">
@@ -82,19 +83,63 @@ function Register() {
                       placeholder="Your name"
                     />
                   </div>
-                  <div className="form-control flex flex-row pb-4">
-                    <label className="label">
-                      <span className="label-text text-white font-semibold">
-                        Phone Number
-                      </span>
-                    </label>
-                    <input
-                      type="number"
-                      className="input input-bordered bg-[#cbd5e1]"
-                      value={numberPhone}
-                      onChange={(e) => setNumberPhone(e.target.valueAsNumber)}
-                      placeholder="Your number phone"
-                    />
+                  <div className="flex flex-col">
+                    <div className="form-control flex flex-row gap-12 pb-4">
+                      <label className="label">
+                        <span className="label-text text-white font-semibold">
+                          Name
+                        </span>
+                      </label>
+                      <input
+                        type="text"
+                        className="input input-bordered bg-[#cbd5e1]"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div className="form-control flex flex-row pb-4">
+                      <label className="label">
+                        <span className="label-text text-white font-semibold">
+                          Phone Number
+                        </span>
+                      </label>
+                      <input
+                        type="number"
+                        className="input input-bordered bg-[#cbd5e1]"
+                        value={number_phone}
+                        onChange={(e) => setNumberPhone(e.target.valueAsNumber)}
+                        placeholder="Your number phone"
+                      />
+                    </div>
+                    <div className="form-control flex flex-row gap-12 pb-4">
+                      <label className="label">
+                        <span className="label-text text-white font-semibold">
+                          Email
+                        </span>
+                      </label>
+                      <input
+                        type="email"
+                        className="input input-bordered bg-[#cbd5e1]"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Your email"
+                      />
+                    </div>
+                    <div className="form-control flex flex-row gap-7 pb-4">
+                      <label className="label">
+                        <span className="label-text text-white font-semibold">
+                          Password
+                        </span>
+                      </label>
+                      <input
+                        type="password"
+                        className="input input-bordered bg-[#cbd5e1]"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="password"
+                      />
+                    </div>
                   </div>
                   <div className="form-control flex flex-row gap-12 pb-4">
                     <label className="label">
@@ -110,45 +155,24 @@ function Register() {
                       placeholder="Your email"
                     />
                   </div>
-                  <div className="form-control flex flex-row gap-7 pb-4">
-                    <label className="label">
-                      <span className="label-text text-white font-semibold">
-                        Password
-                      </span>
-                    </label>
-                    <input
-                      type="password"
-                      className="input input-bordered bg-[#cbd5e1]"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="password"
-                    />
-                  </div>
-                </div>
-
-                <div className="form-control place-items-center ">
-                  <button className="btn bg-[#64748b] w-32 px-12 rounded-full text-black">
-                    register
-                  </button>
-                </div>
-                <label className="label">
-                  <a
-                    href="#"
-                    className="label-text-alt link link-hover text-white"
-                  >
-                    Already have an Account ?
-                  </a>
-                  <button className="btn bg-[#64748b] w-32 px-12 rounded-full text-black">
-                    <Link to="/login">login</Link>
-                  </button>
-                </label>
-              </form>
+                  <label className="label">
+                    <a
+                      href="#"
+                      className="label-text-alt link link-hover text-white"
+                    >
+                      Already have an Account ?
+                    </a>
+                    <button className="btn bg-[#64748b] w-32 px-12 rounded-full text-black">
+                      <Link to="/login">Login</Link>
+                    </button>
+                  </label>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    // </LayoutHome>
   );
 }
 
