@@ -1,39 +1,67 @@
 import withReactContent from "sweetalert2-react-content";
 import React, { useState, useEffect } from "react";
-// { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 import Swal from "../utils/Swal";
 import LayoutHome from "../components/LayoutHome";
 import Button from "../components/Button";
-//entah siapayang salah
+
 function Login() {
   const MySwal = withReactContent(Swal);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [, setCookie] = useCookies([
+    "token",
+    "name",
+    "user_id",
+    "profile_foto",
+  ]);
   const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
-  const [name, setName] = useState<string>("");
-  const [numberPhone, setNumberPhone] = useState<number>(1);
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   useEffect(() => {
-    if (name && numberPhone && email && password) {
+    if (email && password) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  }, [name, numberPhone, email, password]);
+  }, [email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    setLoading(true);
     e.preventDefault();
     const body = {
-      name: name,
-      numberPhone: numberPhone,
-      email,
-      password,
+      email: email,
+      password: password,
     };
+    await axios
+      .post("http://13.229.98.76/login", body)
+      .then((res) => {
+        const { message, data } = res.data;
+        if (data) {
+          console.log(data);
+          MySwal.fire({
+            title: "Success",
+            text: message,
+            showCancelButton: false,
+          });
+          setCookie("token", data.token, { path: "/" });
+          setCookie("name", data.name);
+          setCookie("profile_foto", data.profile_foto);
+          setCookie("user_id", data.id);
+          navigate("/home");
+        }
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error,
+        });
+      });
   };
 
   return (
