@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Button from "./Button";
+
 // import { IconName } from "react-icons/hi";
 
 // HiSearch
@@ -12,7 +13,7 @@ const NavbarHome = () => {
       </div>
       <div className="flex-1 gap-5">
         <a className="btn btn-ghost normal-case text-2xl text-white">
-          SocialAPP
+          <Link to="/register">SocialAPP </Link>
         </a>
         <div className="flex flex-1 items-center  justify-around">
           <div className="form-control w-full max-w-xs">
@@ -23,7 +24,7 @@ const NavbarHome = () => {
         <div className="justify-between">
           <label tabIndex={0} className="justify-between:flex-end">
             <a className="btn btn-ghost normal-case text-2xl text-white">
-              Login
+              <Link to="/register">Login </Link>
             </a>
           </label>
         </div>

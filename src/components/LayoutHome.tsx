@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-
 interface LayoutHomeProps {
   children: React.ReactNode;
 }

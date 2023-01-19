@@ -1,23 +1,27 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useMemo, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-//import { useDispatch } from "react-redux/es/exports";
 
-import Detail from "../pages/Detail";
-import Home from "../pages/Home";
-import Profil from "../pages/Profil";
+import PageHome from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import { ThemeContext } from "../utils/context";
+import Home from "../pages/Home";
+import Detail from "../pages/Detail";
+import Profil from "../pages/Profil";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Register />,
+    element: <PageHome />,
   },
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     path: "/home",
@@ -34,30 +38,6 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  //const dispatch = useDispatch();
-  const [theme, setTheme] = useState("light");
-  const background = useMemo(() => ({ theme, setTheme }), [theme]);
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    const getFavMovies = localStorage.getItem("FavMovie");
-    if (getFavMovies) {
-      //dispatch(setFavorites(JSON.parse(getFavMovies)));
-    }
-  }, []);
-
-  return (
-    <ThemeContext.Provider value={background}>
-      <RouterProvider router={router} />
-    </ThemeContext.Provider>
-  );
+  return <RouterProvider router={router} />;
 };
-
 export default App;

@@ -151,7 +151,6 @@ npm run dev
 ## 🤖Author
 
 - Devi Andri Aldi :
-
   [![GitHub](https://img.shields.io/badge/-Andri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/deviandrialdi)
 
 - Inri Veronika:

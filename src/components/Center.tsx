@@ -27,23 +27,16 @@ const Center: FC<CenterProps> = ({ content, photo, user_name, id }) => {
               alt=""
               className="w-12 h-12 rounded-[50%]"
             />
-            <span className="flex-row font-semibold text-xl">{user_name}</span>
-          </div>
-          <div className="px-20">
-            <div className="box-border h-auto w-94 border-1 bg-white rounded-lg">
-              <p>{content}</p>
             </div>
           </div>
           <div className="px-20 pt-3 ">
             <div className="box-border h-auto w-94 border-1 bg-[#cbd5e1] rounded-lg">
-              <img src={photo} alt="" onClick={() => onClickDetail()} />
             </div>
             <div className="flex flex-row gap-36 pb-5">
               <div className="flex">
                 <span className="flex-row pt-3 pt-3">
                   <GoCommentDiscussion />
                 </span>
-                <span className="font-normal">123</span>
               </div>
               <div className="flex">
                 <span className="flex-row pt-3 px-24 pt-3">
