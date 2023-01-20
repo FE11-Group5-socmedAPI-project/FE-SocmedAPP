@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-//import Swal from "../utils/Swal";
 import { useCookies } from "react-cookie";
 import Navbar from "../components/Navbar/Navbar";
 import Cardpost from "../components/Cardpost";
@@ -17,8 +16,6 @@ interface PropsType {}
 interface StateType {}
 
 const Profil = () => {
-  // const { id } = useParams();
-  //const [cookie, setCookie] = useCookies();
   const [content, setContent] = useState<string>("");
   const [objSubmit, setObjSubmit] = useState<ProfileType>({});
   const [photo, setPhoto] = useState<any>({});
@@ -73,7 +70,7 @@ const Profil = () => {
     setNameProfil(cookie.name);
     setProfile(cookie.profile_foto);
   }, []);
-  //akhir ptofil
+
 
   function getProfil() {
     const config = {
@@ -152,10 +149,10 @@ const Profil = () => {
     axios
       .delete(`http://13.229.98.76/users`, config)
       .then((ress) => {
-        // const { data } = ress.data;
+
         console.log(ress);
         navigate("/");
-        // console.log("data yang sudah dihapus", data);
+
       })
       .catch((error) => {
         alert(error);
@@ -172,9 +169,7 @@ const Profil = () => {
 
     const formData = new FormData();
     formData.append("name", editName);
-    // if(editphonenumber) {
-    //   formData.append("phone_number", phone_number)
-    // }
+
     formData.append("phone_number", editphonenumber);
     formData.append("email", editEmail);
 
