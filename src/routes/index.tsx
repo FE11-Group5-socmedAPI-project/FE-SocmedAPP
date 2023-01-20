@@ -2,9 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useMemo, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import PageHome from "../pages/PageHome";
+
+import PageHome from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Home from "../pages/Home";
+import Detail from "../pages/Detail";
+import Profil from "../pages/Profil";
 
 const router = createBrowserRouter([
   {
@@ -19,18 +23,18 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
-  // {
-  //   path: "/home",
-  //   element: <Home />,
-  // },
-  // {
-  //   path: "/posts/:id_post",
-  //   element: <Detail />,
-  // },
-  // {
-  //   path: "/profil",
-  //   element: <Profil />,
-  // },
+  {
+    path: "/home",
+    element: <Home />,
+  },
+  {
+    path: "/posts/:id_post",
+    element: <Detail />,
+  },
+  {
+    path: "/profil",
+    element: <Profil />,
+  },
 ]);
 
 const App = () => {
