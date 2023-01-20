@@ -78,7 +78,7 @@ Socmed APP is a social media website for people to post, edit and delete and sha
 
 ## 🌎Demo
 
-Here is a working live demo - [Vercel](https://mentutor.vercel.app/)
+Here is a working live demo - [Vercel](https://fe-socmed-app.vercel.app/)
 
 ## 🎨Prototype
 ![MacBook_Pro_16-removebg-preview](https://drive.google.com/file/d/1rvDtWIWUY2pFVQ3e-0X1b9_KI5kUAfcu/view?usp=sharing)
