@@ -154,7 +154,6 @@ npm run dev
   [![GitHub](https://img.shields.io/badge/-Andri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/deviandrialdi)
 
 - Inri Veronika:
-
   [![GitHub](https://img.shields.io/badge/-Inri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/ALTA-Fe11-Inri)
 
 [contributors-shield]: https://img.shields.io/github/contributors/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
