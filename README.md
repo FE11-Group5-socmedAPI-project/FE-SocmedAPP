@@ -1,10 +1,5 @@
 <div align="center">
-<img src="src\"alt="Logo">
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+<img src="https://github.com/FE11-Group5-socmedAPI-project/FE-SocmedAPP/blob/main/src/assets/Group5.png"alt="Logo">
 
 </div>
 
@@ -60,7 +55,7 @@ Socmed APP is a social media website for people to post, edit and delete and sha
 ## Language and Tools
 <div>
     <a href="https://vitejs.dev/guide/">
-    <img src="https://drive.google.com/file/d/1liKBKq0KAlhk0GzYKaqnFhoOd_jS0jxG/view?usp=sharing" title="React Vite TypeScript" alt="React Vite TypeScript" width="40"/>
+    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--os9DYPO5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3hgg1jny2imxei9lsto.jpg" title="React Vite TypeScript" alt="React Vite TypeScript" width="40"/>
     </a>&nbsp;
     <a href="https://www.w3schools.com/html/">
     <img src="https://drive.google.com/uc?export=view&id=1XPJKzToBlrQmMSff1NDoSCftzk0QQEJV" title="HTML 5" alt="HTML 5" width="40"/></a>&nbsp;
@@ -78,7 +73,7 @@ Socmed APP is a social media website for people to post, edit and delete and sha
 
 ## 🌎Demo
 
-Here is a working live demo - [Vercel](https://mentutor.vercel.app/)
+Here is a working live demo - [Vercel](https://fe-socmed-app.vercel.app/)
 
 ## 🎨Prototype
 ![MacBook_Pro_16-removebg-preview](https://drive.google.com/file/d/1rvDtWIWUY2pFVQ3e-0X1b9_KI5kUAfcu/view?usp=sharing)
@@ -125,7 +120,7 @@ npm run dev
 - Register
 - Logout
 
-### 🧑‍🎓 As Non User
+### 🧑‍ As Non User
 
 - View comment and Post
 
@@ -152,17 +147,8 @@ npm run dev
 
 - Devi Andri Aldi :
 
-  [![GitHub](https://img.shields.io/badge/-Andri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/deviandrialdi) [![LinkedIn](https://img.shields.io/badge/-Andri-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devi-andri-aldi-53b630144/)
+  [![GitHub](https://img.shields.io/badge/-Andri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/deviandrialdi)
 
-- Dwi Fakhri Chusaini:
+- Inri Veronika:
 
-  [![GitHub](https://img.shields.io/badge/-Inri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/ALTA-Fe11-Inri) [![LinkedIn](https://img.shields.io/badge/-Fakhri-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dwi-fakhri-chusaini-5a114518a/)
-
-[contributors-shield]: https://img.shields.io/github/contributors/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[contributors-url]: https://github.com/FE11-Group5-socmedAPI-project/FE-SocmedAPP
-[forks-shield]: https://img.shields.io/github/forks/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[forks-url]: https://github.com/Capstone-Group3-Mentutor/Front-End/network/members
-[stars-shield]: https://img.shields.io/github/stars/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[stars-url]: https://github.com/Capstone-Group3-Mentutor/Front-End/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[issues-url]: https://github.com/Capstone-Group3-Mentutor/Front-End/issues
+  [![GitHub](https://img.shields.io/badge/-Inri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/ALTA-Fe11-Inri)

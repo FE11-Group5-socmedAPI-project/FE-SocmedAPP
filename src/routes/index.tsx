@@ -2,7 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useMemo, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import PageHome from "../pages/PageHome";
+
+import PageHome from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
