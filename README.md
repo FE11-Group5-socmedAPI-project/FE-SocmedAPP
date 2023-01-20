@@ -60,7 +60,7 @@ Socmed APP is a social media website for people to post, edit and delete and sha
 ## Language and Tools
 <div>
     <a href="https://vitejs.dev/guide/">
-    <img src="https://drive.google.com/file/d/1liKBKq0KAlhk0GzYKaqnFhoOd_jS0jxG/view?usp=sharing" title="React Vite TypeScript" alt="React Vite TypeScript" width="40"/>
+    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--os9DYPO5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3hgg1jny2imxei9lsto.jpg" title="React Vite TypeScript" alt="React Vite TypeScript" width="40"/>
     </a>&nbsp;
     <a href="https://www.w3schools.com/html/">
     <img src="https://drive.google.com/uc?export=view&id=1XPJKzToBlrQmMSff1NDoSCftzk0QQEJV" title="HTML 5" alt="HTML 5" width="40"/></a>&nbsp;
