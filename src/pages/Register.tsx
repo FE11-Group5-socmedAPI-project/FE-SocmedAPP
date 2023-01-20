@@ -57,7 +57,6 @@ function Register() {
   };
 
   return (
-    // <LayoutHome>
     <div className=" w-full h-full ">
       <div>
         <div className="hero min-h-screen bg-base-200">
@@ -148,7 +147,6 @@ function Register() {
         </div>
       </div>
     </div>
-    // </LayoutHome>
   );
 }
 
