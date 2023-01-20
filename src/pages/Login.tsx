@@ -1,12 +1,11 @@
 import withReactContent from "sweetalert2-react-content";
-import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-
-import { useCookies } from "react-cookie";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 import Swal from "../utils/Swal";
-import { handleAuth } from "../utils/redux/reducers/reducer";
 import LayoutHome from "../components/LayoutHome";
 import Button from "../components/Button";
 
@@ -34,34 +33,33 @@ function Login() {
   }, [email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    setLoading(true);
     e.preventDefault();
     const body = {
       email: email,
       password: password,
     };
-    axios
+    await axios
       .post("http://13.229.98.76/login", body)
       .then((res) => {
         const { message, data } = res.data;
-
         if (data) {
+          console.log(data);
           MySwal.fire({
             title: "Success",
             text: message,
             showCancelButton: false,
           });
-          setCookie("token", data.token, { path: "/home" });
+          setCookie("token", data.token, { path: "/" });
           setCookie("name", data.name);
           setCookie("profile_foto", data.profile_foto);
           setCookie("user_id", data.id);
+          navigate("/home");
         }
       })
       .catch((error) => {
         Swal.fire({
           icon: "error",
-          title: "Oops...",
-          text: error,
+          title: "Anda harus register terlebih dahulu",
         });
       });
   };
@@ -99,11 +97,11 @@ function Login() {
                       </span>
                     </label>
                     <input
-                      type="Password"
+                      type="password"
                       className="input input-bordered bg-[#cbd5e1]"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Password"
+                      placeholder="password"
                     />
                   </div>
                 </div>
@@ -118,10 +116,10 @@ function Login() {
                     href="#"
                     className="label-text-alt link link-hover text-white"
                   >
-                    <Link to="/register"> Don't have a account yet ?</Link>
+                    Don't have a account yet ?
                   </a>
                   <button className="btn bg-[#64748b] w-32 px-12 rounded-full text-black">
-                    <Link to="/register">register</Link>
+                    <Link to="/">Register</Link>
                   </button>
                 </label>
               </form>
