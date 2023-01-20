@@ -1,11 +1,6 @@
 <div align="center">
 <img src="https://github.com/FE11-Group5-socmedAPI-project/FE-SocmedAPP/blob/main/src/assets/Group5.png"alt="Logo">
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
 </div>
 
 <!-- TABLE OF CONTENTS -->
