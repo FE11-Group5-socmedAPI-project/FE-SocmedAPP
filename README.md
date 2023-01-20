@@ -1,5 +1,5 @@
 <div align="center">
-<img src="src\"alt="Logo">
+<img src="https://github.com/FE11-Group5-socmedAPI-project/FE-SocmedAPP/blob/main/src/assets/Group5.png"alt="Logo">
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -125,7 +125,7 @@ npm run dev
 - Register
 - Logout
 
-### 🧑‍🎓 As Non User
+### 🧑‍ As Non User
 
 - View comment and Post
 
@@ -157,12 +157,3 @@ npm run dev
 - Inri Veronika:
 
   [![GitHub](https://img.shields.io/badge/-Inri-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/ALTA-Fe11-Inri)
-
-[contributors-shield]: https://img.shields.io/github/contributors/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[contributors-url]: https://github.com/FE11-Group5-socmedAPI-project/FE-SocmedAPP
-[forks-shield]: https://img.shields.io/github/forks/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[forks-url]: https://github.com/Capstone-Group3-Mentutor/Front-End/network/members
-[stars-shield]: https://img.shields.io/github/stars/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[stars-url]: https://github.com/Capstone-Group3-Mentutor/Front-End/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Capstone-Group3-Mentutor/Front-End.svg?style=for-the-badge
-[issues-url]: https://github.com/Capstone-Group3-Mentutor/Front-End/issues
