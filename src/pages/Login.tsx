@@ -2,9 +2,8 @@ import withReactContent from "sweetalert2-react-content";
 import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-
-import axios from "axios";
 import { useCookies } from "react-cookie";
+import axios from "axios";
 
 import Swal from "../utils/Swal";
 import { handleAuth } from "../utils/redux/reducers/reducer";
@@ -35,6 +34,7 @@ function Login() {
   }, [email, password]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
     const body = {
       email: email,
@@ -44,8 +44,8 @@ function Login() {
       .post("http://13.229.98.76/login", body)
       .then((res) => {
         const { message, data } = res.data;
+
         if (data) {
-          console.log(data);
           MySwal.fire({
             title: "Success",
             text: message,
@@ -55,7 +55,6 @@ function Login() {
           setCookie("name", data.name);
           setCookie("profile_foto", data.profile_foto);
           setCookie("user_id", data.id);
-          navigate("/home");
         }
       })
       .catch((error) => {
@@ -131,7 +130,6 @@ function Login() {
         </div>
       </div>
     </div>
-    // </LayoutHome>
   );
 }
 
