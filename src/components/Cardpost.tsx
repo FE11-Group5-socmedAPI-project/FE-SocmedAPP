@@ -43,34 +43,6 @@ const Cardpost: FC<CardPostProps> = ({
   const [profile_foto, setProfile] = useState();
   const { id } = useParams();
 
-  // function editPostingan() {
-  //   const config = {
-  //     headers: {
-  //       Authorization: `Bearer ${cookie.token}`,
-  //     },
-  //   };
-  //   axios
-  //     .put(`http://13.229.98.76/post/${id}`, config)
-  //     .then((ress) => {})
-  //     .catch((error) => {
-  //       alert(error);
-  //     });
-  // }
-
-  // function hapusPostingan(id) {
-  //   const config = {
-  //     headers: {
-  //       Authorization: `Bearer ${cookie.token}`,
-  //     },
-  //   };
-  //   axios
-  //     .delete(`http://13.229.98.76/post/${id}`, config)
-  //     .then((ress) => {})
-  //     .catch((error) => {
-  //       alert(error);
-  //     });
-  // }
-
   useEffect(() => {
     setNameProfil(cookie.name);
     setProfile(cookie.profile_foto);
@@ -80,7 +52,7 @@ const Cardpost: FC<CardPostProps> = ({
       <div className="bg-[#737373] rounded-lg pb-5">
         <div className="flex gap-4 px-5 pt-3 ">
           <img
-            src="https://assets.jalantikus.com/assets/cache/498/280/userfiles/2019/10/15/foto-aktor-korea-ganteng-nam-joo-hyuk-03-4ae5b.jpg.webp"
+            src="https://cdn.kibrispdr.org/data/366/gambar-icon-orang-0.png"
             alt=""
             className="w-12 h-12 rounded-[50%]"
           />

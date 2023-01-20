@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import NavbarBeranda from "./NavbarBeranda";
+import NavbarBeranda from "../components/NavbarHome";
 
 interface LayoutBerandaProps {
   children: React.ReactNode;

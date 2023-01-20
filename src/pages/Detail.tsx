@@ -51,6 +51,7 @@ const Detail = () => {
           <div className="">
             <Leftbar />
           </div>
+
           <div className="pt-10 pb-12 ">
             <div className="bg-[#d4d4d4] rounded-lg">
               <div className="flex gap-4 px-5 pt-3">
@@ -59,6 +60,7 @@ const Detail = () => {
                   alt=""
                   className="w-12 h-12 rounded-[50%]"
                 />
+
                 <span className="flex-row font-semibold text-xl">
                   {data.user_name}
                 </span>
@@ -87,6 +89,7 @@ const Detail = () => {
                 </div>
               </div>
             </div>
+
             <Cardcoment />
           </div>
 

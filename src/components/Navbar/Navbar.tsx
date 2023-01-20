@@ -35,7 +35,11 @@ const Navbar = () => {
       </div>
       <div className="topbarRight px-46">
         <p className="people">{name}</p>
-        <img src={profile_foto} alt="" className="topbarImg" />
+        <img
+          src="https://cdn.kibrispdr.org/data/366/gambar-icon-orang-0.png"
+          alt=""
+          className="topbarImg"
+        />
       </div>
     </div>
   );

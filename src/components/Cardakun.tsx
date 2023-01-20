@@ -35,62 +35,6 @@ const Cardakun: FC<AkunProps> = ({
   hapusAkun,
   ...props
 }) => {
-  // const [editName, setEditName] = useState<string>("");
-  // const [editEmail, setEditEmail] = useState<string>("");
-  // const [editphonenumber, setEditPhoneNumber] = useState<number>(0);
-  const [cookie, setCookie] = useCookies();
-  //const { id } = useParams();
-
-  // function hapusAkun() {
-  //   const config = {
-  //     headers: {
-  //       Authorization: `Bearer ${cookie.token}`,
-  //     },
-  //   };
-  //   axios
-  //     .delete(`http://13.229.98.76/post/users`, config)
-  //     .then((ress) => {
-  //       const { data } = ress.data;
-
-  //       console.log("data yang sudah dihapus", data);
-  //     })
-  //     .catch((error) => {
-  //       alert(error);
-  //     });
-  // }
-
-  // async function updateAkun(e: React.FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
-  //   // const body = {
-  //   //   editName: editName,
-  //   //   editphonenumber: editphonenumber,
-  //   //   editEmail: editEmail,
-  //   // };
-
-  //   const formData = new FormData();
-  //   formData.append("name", editName);
-
-  //   const config = {
-  //     headers: {
-  //       Authorization: `Bearer ${cookie.token}`,
-  //     },
-  //   };
-  //   await axios
-  //     .put(`http://13.229.98.76/users`, formData, config)
-  //     .then((ress) => {
-  //       const { data } = ress.data;
-  //       console.log("data yang diubah", data);
-  //     })
-  //     .catch((err) => {
-  //       alert(err);
-  //     });
-  // }
-
-  /*
-  buat 3 useState untuk menampung input name, email, dan phone number.
-
-  disini kamu kasih form, terus dikasih fungsi seperti addPost tadi, bedanya disini kam ugak perlu pakai formData, bisa pakai body (object)
-  */
   return (
     <div
       className="box-border h-auto w-86 p-4 border-1 bg-white rounded-lg px-10"

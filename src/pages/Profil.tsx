@@ -135,6 +135,7 @@ const Profil = () => {
         console.log("data baru", message);
         getPost();
         setImage({});
+        alert("berhasil update status");
       })
       .catch((err) => {
         alert(err);
@@ -174,8 +175,8 @@ const Profil = () => {
     // if(editphonenumber) {
     //   formData.append("phone_number", phone_number)
     // }
-    // formData.append("name", editName);
-    // formData.append("name", editName);
+    formData.append("phone_number", editphonenumber);
+    formData.append("email", editEmail);
 
     const config = {
       headers: {
@@ -271,7 +272,7 @@ const Profil = () => {
         </div>
         <div className="flex justify-center  ">
           <img
-            src={profile_foto}
+            src="https://cdn.kibrispdr.org/data/366/gambar-icon-orang-0.png"
             alt=""
             className="w-52 h-52 rounded-[50%] absolute items-center top-36 bg-black"
           />
