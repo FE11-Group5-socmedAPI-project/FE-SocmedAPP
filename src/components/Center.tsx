@@ -34,12 +34,12 @@ const Center: FC<CenterProps> = ({ content, photo, user_name, id }) => {
             </div>
             <div className="flex flex-row gap-36 pb-5">
               <div className="flex">
-                <span className="flex-row pt-3 pt-3">
+                <span className="flex-row pt-3">
                   <GoCommentDiscussion />
                 </span>
               </div>
               <div className="flex">
-                <span className="flex-row pt-3 px-24 pt-3">
+                <span className="flex-row px-24 pt-3">
                   <BiShareAlt />
                 </span>
               </div>
